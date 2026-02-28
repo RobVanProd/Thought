@@ -26,6 +26,7 @@ results/**/*.sqlite
 
 # TypeScript / Node
 typescript/node_modules/
+typescript/.npm-cache/
 typescript/dist/
 typescript/.vitest/
 
