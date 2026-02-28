@@ -1,0 +1,22 @@
+{
+  "name": "thought-wrapper-ts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TypeScript port of Explicit Thought Tagging Wrapper with lab-grade validation.",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run --reporter=verbose",
+    "benchmark": "tsx scripts/benchmark.ts",
+    "check:gates": "tsx scripts/check_gates.ts",
+    "lab:validate": "tsx scripts/lab_validate.ts"
+  },
+  "devDependencies": {
+    "@types/benchmark": "^2.1.5",
+    "@types/node": "^22.10.0",
+    "benchmark": "^2.1.4",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

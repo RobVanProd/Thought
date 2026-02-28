@@ -1,0 +1,147 @@
+{
+  "metadata" : {
+    "timestamp_utc" : "2026-02-28T19:41:21.106812400Z",
+    "java_version" : "21.0.10",
+    "java_vendor" : "Microsoft",
+    "platform" : "Windows 11 10.0",
+    "runs" : 1000,
+    "scale_runs" : 1000,
+    "accuracy_cases" : 1000,
+    "benchmark_engine" : "JMH + nanoTime"
+  },
+  "spec_sample" : {
+    "input_chars" : 691,
+    "tag_count" : 4,
+    "regex_parse" : {
+      "count" : 1000,
+      "avg_ms" : 0.013927699999999946,
+      "median_ms" : 0.0151,
+      "p95_ms" : 0.0163,
+      "min_ms" : 0.0069,
+      "max_ms" : 0.0504,
+      "std_ms" : 0.0034730653189941597,
+      "jmh" : {
+        "score" : 7.189470959154105,
+        "score_error" : 0.3221583068547142,
+        "score_unit" : "us/op",
+        "label" : "specRegexParse"
+      }
+    },
+    "regex_clean" : {
+      "count" : 1000,
+      "avg_ms" : 0.011700000000000118,
+      "median_ms" : 0.0106,
+      "p95_ms" : 0.018,
+      "min_ms" : 0.0103,
+      "max_ms" : 0.0554,
+      "std_ms" : 0.003207272984951546,
+      "jmh" : {
+        "score" : 10.382154563635394,
+        "score_error" : 1.04972123174078,
+        "score_unit" : "us/op",
+        "label" : "specRegexClean"
+      }
+    },
+    "linear_parse" : {
+      "count" : 1000,
+      "avg_ms" : 0.001142899999999996,
+      "median_ms" : 0.001,
+      "p95_ms" : 0.0018,
+      "min_ms" : 8.0E-4,
+      "max_ms" : 0.0174,
+      "std_ms" : 7.773992474912746E-4,
+      "jmh" : {
+        "score" : 0.8325844756821879,
+        "score_error" : 0.01936563828729077,
+        "score_unit" : "us/op",
+        "label" : "specLinearParse"
+      }
+    },
+    "linear_clean" : {
+      "count" : 1000,
+      "avg_ms" : 0.0055668000000000046,
+      "median_ms" : 0.0052,
+      "p95_ms" : 0.0085,
+      "min_ms" : 0.0051,
+      "max_ms" : 0.0416,
+      "std_ms" : 0.00169868706947454,
+      "jmh" : {
+        "score" : 4.741929073062563,
+        "score_error" : 0.2518443760926012,
+        "score_unit" : "us/op",
+        "label" : "specLinearClean"
+      }
+    }
+  },
+  "scaling" : [ {
+    "chars" : 693,
+    "tags" : 4,
+    "parse" : {
+      "count" : 1000,
+      "avg_ms" : 0.009910799999999944,
+      "median_ms" : 0.0091,
+      "p95_ms" : 0.0156,
+      "min_ms" : 0.0087,
+      "max_ms" : 0.0275,
+      "std_ms" : 0.002320759220600018
+    },
+    "clean" : {
+      "count" : 1000,
+      "avg_ms" : 0.020322399999999914,
+      "median_ms" : 0.017,
+      "p95_ms" : 0.0289,
+      "min_ms" : 0.0168,
+      "max_ms" : 0.8549,
+      "std_ms" : 0.0280705403980757
+    }
+  }, {
+    "chars" : 10000,
+    "tags" : 50,
+    "parse" : {
+      "count" : 1000,
+      "avg_ms" : 0.1275272999999997,
+      "median_ms" : 0.119,
+      "p95_ms" : 0.1812,
+      "min_ms" : 0.1165,
+      "max_ms" : 0.3147,
+      "std_ms" : 0.02239854380780143
+    },
+    "clean" : {
+      "count" : 1000,
+      "avg_ms" : 0.24081590000000028,
+      "median_ms" : 0.2286,
+      "p95_ms" : 0.3077,
+      "min_ms" : 0.2192,
+      "max_ms" : 0.4433,
+      "std_ms" : 0.029105204297341737
+    }
+  }, {
+    "chars" : 20000,
+    "tags" : 100,
+    "parse" : {
+      "count" : 1000,
+      "avg_ms" : 0.25424009999999997,
+      "median_ms" : 0.2396,
+      "p95_ms" : 0.3406,
+      "min_ms" : 0.2324,
+      "max_ms" : 0.8563,
+      "std_ms" : 0.04303081293666202
+    },
+    "clean" : {
+      "count" : 1000,
+      "avg_ms" : 0.4791023999999996,
+      "median_ms" : 0.4543,
+      "p95_ms" : 0.6375,
+      "min_ms" : 0.4396,
+      "max_ms" : 1.2321,
+      "std_ms" : 0.06763024910674216
+    }
+  } ],
+  "accuracy" : {
+    "cases" : 1000,
+    "total_expected_tags" : 15339,
+    "exact_case_accuracy_pct" : 100.0,
+    "per_tag_accuracy_pct" : 100.0
+  },
+  "jmh_raw_result_path" : "results\\jmh_raw_results.json"
+}

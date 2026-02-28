@@ -1,0 +1,228 @@
+[
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "thoughtwrapper.bench.ThoughtWrapperBenchmark.specLinearClean",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "C:\\Program Files\\Microsoft\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "--enable-native-access=ALL-UNNAMED",
+            "-Dclassworlds.conf=C:\\Tools\\Maven\\apache-maven-3.9.12\\bin\\m2.conf",
+            "-Dmaven.home=C:\\Tools\\Maven\\apache-maven-3.9.12",
+            "-Dlibrary.jansi.path=C:\\Tools\\Maven\\apache-maven-3.9.12\\lib\\jansi-native",
+            "-Dmaven.multiModuleProjectDirectory=C:\\Users\\Rob\\projects\\Thought\\java"
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 2,
+        "warmupTime" : "250 ms",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "250 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 4.741929073062563,
+            "scoreError" : 0.2518443760926012,
+            "scoreConfidence" : [
+                4.490084696969962,
+                4.993773449155164
+            ],
+            "scorePercentiles" : {
+                "0.0" : 4.665639377656025,
+                "50.0" : 4.742236715613278,
+                "90.0" : 4.839157449754924,
+                "95.0" : 4.839157449754924,
+                "99.0" : 4.839157449754924,
+                "99.9" : 4.839157449754924,
+                "99.99" : 4.839157449754924,
+                "99.999" : 4.839157449754924,
+                "99.9999" : 4.839157449754924,
+                "100.0" : 4.839157449754924
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    4.665639377656025,
+                    4.742236715613278,
+                    4.702924282961328,
+                    4.839157449754924,
+                    4.759687539327257
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "thoughtwrapper.bench.ThoughtWrapperBenchmark.specLinearParse",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "C:\\Program Files\\Microsoft\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "--enable-native-access=ALL-UNNAMED",
+            "-Dclassworlds.conf=C:\\Tools\\Maven\\apache-maven-3.9.12\\bin\\m2.conf",
+            "-Dmaven.home=C:\\Tools\\Maven\\apache-maven-3.9.12",
+            "-Dlibrary.jansi.path=C:\\Tools\\Maven\\apache-maven-3.9.12\\lib\\jansi-native",
+            "-Dmaven.multiModuleProjectDirectory=C:\\Users\\Rob\\projects\\Thought\\java"
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 2,
+        "warmupTime" : "250 ms",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "250 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 0.8325844756821879,
+            "scoreError" : 0.01936563828729077,
+            "scoreConfidence" : [
+                0.8132188373948971,
+                0.8519501139694786
+            ],
+            "scorePercentiles" : {
+                "0.0" : 0.8253534314804533,
+                "50.0" : 0.834503605361102,
+                "90.0" : 0.8379060879060879,
+                "95.0" : 0.8379060879060879,
+                "99.0" : 0.8379060879060879,
+                "99.9" : 0.8379060879060879,
+                "99.99" : 0.8379060879060879,
+                "99.999" : 0.8379060879060879,
+                "99.9999" : 0.8379060879060879,
+                "100.0" : 0.8379060879060879
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    0.834503605361102,
+                    0.8354848408754494,
+                    0.8253534314804533,
+                    0.8379060879060879,
+                    0.8296744127878467
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "thoughtwrapper.bench.ThoughtWrapperBenchmark.specRegexClean",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "C:\\Program Files\\Microsoft\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "--enable-native-access=ALL-UNNAMED",
+            "-Dclassworlds.conf=C:\\Tools\\Maven\\apache-maven-3.9.12\\bin\\m2.conf",
+            "-Dmaven.home=C:\\Tools\\Maven\\apache-maven-3.9.12",
+            "-Dlibrary.jansi.path=C:\\Tools\\Maven\\apache-maven-3.9.12\\lib\\jansi-native",
+            "-Dmaven.multiModuleProjectDirectory=C:\\Users\\Rob\\projects\\Thought\\java"
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 2,
+        "warmupTime" : "250 ms",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "250 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 10.382154563635394,
+            "scoreError" : 1.04972123174078,
+            "scoreConfidence" : [
+                9.332433331894615,
+                11.431875795376174
+            ],
+            "scorePercentiles" : {
+                "0.0" : 10.093429893381613,
+                "50.0" : 10.499861577181209,
+                "90.0" : 10.696073530597436,
+                "95.0" : 10.696073530597436,
+                "99.0" : 10.696073530597436,
+                "99.9" : 10.696073530597436,
+                "99.99" : 10.696073530597436,
+                "99.999" : 10.696073530597436,
+                "99.9999" : 10.696073530597436,
+                "100.0" : 10.696073530597436
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    10.097055984555984,
+                    10.093429893381613,
+                    10.696073530597436,
+                    10.499861577181209,
+                    10.524351832460733
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    },
+    {
+        "jmhVersion" : "1.37",
+        "benchmark" : "thoughtwrapper.bench.ThoughtWrapperBenchmark.specRegexParse",
+        "mode" : "avgt",
+        "threads" : 1,
+        "forks" : 0,
+        "jvm" : "C:\\Program Files\\Microsoft\\jdk-21.0.10.7-hotspot\\bin\\java.exe",
+        "jvmArgs" : [
+            "--enable-native-access=ALL-UNNAMED",
+            "-Dclassworlds.conf=C:\\Tools\\Maven\\apache-maven-3.9.12\\bin\\m2.conf",
+            "-Dmaven.home=C:\\Tools\\Maven\\apache-maven-3.9.12",
+            "-Dlibrary.jansi.path=C:\\Tools\\Maven\\apache-maven-3.9.12\\lib\\jansi-native",
+            "-Dmaven.multiModuleProjectDirectory=C:\\Users\\Rob\\projects\\Thought\\java"
+        ],
+        "jdkVersion" : "21.0.10",
+        "vmName" : "OpenJDK 64-Bit Server VM",
+        "vmVersion" : "21.0.10+7-LTS",
+        "warmupIterations" : 2,
+        "warmupTime" : "250 ms",
+        "warmupBatchSize" : 1,
+        "measurementIterations" : 5,
+        "measurementTime" : "250 ms",
+        "measurementBatchSize" : 1,
+        "primaryMetric" : {
+            "score" : 7.189470959154105,
+            "scoreError" : 0.3221583068547142,
+            "scoreConfidence" : [
+                6.867312652299391,
+                7.511629266008819
+            ],
+            "scorePercentiles" : {
+                "0.0" : 7.052306275636911,
+                "50.0" : 7.199582296226361,
+                "90.0" : 7.277659340053986,
+                "95.0" : 7.277659340053986,
+                "99.0" : 7.277659340053986,
+                "99.9" : 7.277659340053986,
+                "99.99" : 7.277659340053986,
+                "99.999" : 7.277659340053986,
+                "99.9999" : 7.277659340053986,
+                "100.0" : 7.277659340053986
+            },
+            "scoreUnit" : "us/op",
+            "rawData" : [
+                [
+                    7.225478949179764,
+                    7.192327934673503,
+                    7.199582296226361,
+                    7.277659340053986,
+                    7.052306275636911
+                ]
+            ]
+        },
+        "secondaryMetrics" : {
+        }
+    }
+]
+
+

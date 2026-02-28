@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "timestamp_utc": "2026-02-28T20:52:57.178142+00:00",
+    "python_version": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "runs": 120,
+    "seed_count": 30,
+    "reflection_frequency": 2
+  },
+  "agentic_loop": {
+    "turn_total_latency": {
+      "count": 120,
+      "avg_ms": 55.5748183328736,
+      "median_ms": 44.14610000094399,
+      "p95_ms": 89.49740004027262,
+      "min_ms": 17.64269999694079,
+      "max_ms": 275.8962999796495,
+      "std_ms": 34.183166193765345
+    },
+    "completion_latency": {
+      "count": 120,
+      "avg_ms": 38.226740831548035,
+      "median_ms": 19.41639999859035,
+      "p95_ms": 66.84220000170171,
+      "min_ms": 9.887400025036186,
+      "max_ms": 262.3365999897942,
+      "std_ms": 33.023724504168996
+    },
+    "reflection_latency": {
+      "count": 60,
+      "avg_ms": 49.32494499953464,
+      "median_ms": 43.27339999144897,
+      "p95_ms": 93.59370003221557,
+      "min_ms": 30.068299965932965,
+      "max_ms": 247.24160000914708,
+      "std_ms": 30.656558783711432
+    },
+    "thought_store_success_rate_pct": 100.0,
+    "reflection_success_rate_pct": 100.0,
+    "recall_probe_total": 40,
+    "recall_probe_hit_rate_pct": 100.0
+  }
+}

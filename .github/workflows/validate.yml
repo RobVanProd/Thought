@@ -1,0 +1,105 @@
+name: Validate
+
+on:
+  push:
+    branches:
+      - "**"
+  pull_request:
+
+jobs:
+  python:
+    name: Python Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run Consolidated Lab Validation (Phase 1-4)
+        run: python scripts/lab_validate_all.py --python-runs 1000 --tms-runs 500 --tms-corpus 1500 --graph-runs 300 --graph-corpus 900 --agent-runs 180 --agent-reflection-frequency 2 --agent-seed-count 40 --report-output results/lab_validation_report.md
+
+      - name: Upload Python Benchmarks
+        uses: actions/upload-artifact@v4
+        with:
+          name: python-benchmark-results
+          path: |
+            results/benchmark_results.json
+            results/tms_benchmark_results.json
+            results/tms_graph_benchmark_results.json
+            results/agent_loop_benchmark_results.json
+            results/lab_validation_report.md
+
+  typescript:
+    name: TypeScript Validation
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: typescript
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: typescript/package-lock.json
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Vitest
+        run: npm run test
+
+      - name: Run Benchmark
+        run: npm run benchmark -- --output results/benchmark_results_ci.json --accuracy-cases 1000
+
+      - name: Enforce Gates
+        run: npm run check:gates -- --input results/benchmark_results_ci.json --min-accuracy 99.9 --max-p95-ms 1.0
+
+      - name: Upload TypeScript Benchmarks
+        uses: actions/upload-artifact@v4
+        with:
+          name: typescript-benchmark-results
+          path: |
+            typescript/results/benchmark_results_ci.json
+            typescript/results/benchmark_results.json
+            typescript/results/lab_validation_report.md
+
+  java:
+    name: Java Validation (Auto-Enabled)
+    if: ${{ hashFiles('java/pom.xml') != '' }}
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: java
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+          cache: maven
+
+      - name: Run JUnit Tests
+        run: mvn -B test
+
+      - name: Run JMH Benchmark Profile
+        run: mvn -B -Pbenchmarks verify
+
+      - name: Enforce Gates
+        run: mvn -B -Pbenchmarks -DskipTests exec:java -Dexec.mainClass=tms.validation.JavaGateChecker
+
+      - name: Upload Java Benchmarks
+        uses: actions/upload-artifact@v4
+        with:
+          name: java-benchmark-results
+          path: java/results/**

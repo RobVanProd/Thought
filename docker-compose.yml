@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  thought-memory-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - THOUGHT_DB_PATH=/data/tms.sqlite
+      - THOUGHT_EMBED_DIM=384
+    volumes:
+      - ./results/docker-data:/data
+

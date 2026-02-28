@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.venv/
+venv/
+env/
+
+# Build and packaging
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Local validation scratch outputs
+results/.tmp*/
+results/**/*.sqlite
+
+# TypeScript / Node
+typescript/node_modules/
+typescript/dist/
+typescript/.vitest/
+
+# Java / Maven
+java/target/
+java/.m2/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo

@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thoughtwrapper"
+version = "1.0.0"
+description = "Explicit thought tagging wrapper and Thought Memory System for verifiable LLM memory."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "ThoughtWrapper Contributors" }]
+keywords = ["llm", "memory", "reasoning", "thought-tags", "rag", "agent"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Software Development :: Libraries",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+  "numpy>=1.26.0",
+  "pydantic>=2.8.0",
+]
+
+[project.optional-dependencies]
+embeddings = ["sentence-transformers>=3.0.0"]
+service = [
+  "fastapi>=0.115.0",
+  "uvicorn>=0.30.0",
+]
+dev = [
+  "build>=1.2.0",
+  "twine>=5.1.0",
+  "pytest>=8.3.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-org/thoughtwrapper"
+Repository = "https://github.com/your-org/thoughtwrapper"
+Issues = "https://github.com/your-org/thoughtwrapper/issues"
+
+[project.scripts]
+thought-cli = "thought_cli:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["thoughtwrapper*", "thought_wrapper*"]

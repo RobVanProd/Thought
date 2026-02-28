@@ -1,0 +1,68 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  github-release:
+    name: Create GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify Tag Matches pyproject Version
+        run: |
+          python - <<'PY'
+          import pathlib, re, sys
+          tag = "${{ github.ref_name }}"
+          version = tag[1:] if tag.startswith("v") else tag
+          pyproject = pathlib.Path("pyproject.toml").read_text(encoding="utf-8")
+          m = re.search(r'(?m)^version\s*=\s*"([^"]+)"', pyproject)
+          if not m:
+              print("ERROR: could not find version in pyproject.toml")
+              sys.exit(1)
+          project_version = m.group(1)
+          if project_version != version:
+              print(f"ERROR: tag {tag} does not match pyproject version {project_version}")
+              sys.exit(1)
+          print(f"Tag/version match confirmed: {tag}")
+          PY
+
+      - name: Build Release Notes from CHANGELOG
+        run: |
+          python - <<'PY'
+          import pathlib, re
+          tag = "${{ github.ref_name }}"
+          version = tag[1:] if tag.startswith("v") else tag
+          changelog = pathlib.Path("CHANGELOG.md").read_text(encoding="utf-8")
+          pattern = re.compile(
+              rf"^## \[{re.escape(version)}\][^\n]*\n(.*?)(?=^## \[|\Z)",
+              re.MULTILINE | re.DOTALL,
+          )
+          match = pattern.search(changelog)
+          if match:
+              notes = match.group(1).strip()
+          else:
+              template = pathlib.Path(".github/release_template.md")
+              notes = template.read_text(encoding="utf-8").strip() if template.exists() else "Release notes unavailable."
+          output = pathlib.Path("release_notes.md")
+          output.write_text(f"# {tag}\n\n{notes}\n", encoding="utf-8")
+          print(f"Release notes written to {output}")
+          PY
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          body_path: release_notes.md
+          draft: false
+          prerelease: false

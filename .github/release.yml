@@ -1,0 +1,22 @@
+changelog:
+  categories:
+    - title: "Core Parser and Validation"
+      labels:
+        - core
+        - validation
+    - title: "Thought Memory System"
+      labels:
+        - tms
+        - graph
+        - reflection
+    - title: "SDK and Agent Runtime"
+      labels:
+        - sdk
+        - agent
+    - title: "Documentation and Release"
+      labels:
+        - docs
+        - release
+    - title: "Other Changes"
+      labels:
+        - "*"

@@ -1,0 +1,38 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.6.2
+2 info using node@v24.13.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\Rob\projects\Thought\typescript\.npmrc
+5 silly config load:file:C:\Users\Rob\.npmrc
+6 silly config load:file:C:\Users\Rob\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install
+8 verbose argv "install" "--cache" ".npm-cache"
+9 verbose logfile logs-max:10 dir:C:\Users\Rob\projects\Thought\typescript\.npm-cache\_logs\2026-02-28T18_13_30_657Z-
+10 verbose logfile C:\Users\Rob\projects\Thought\typescript\.npm-cache\_logs\2026-02-28T18_13_30_657Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:4496293888 maxSize:1124073472 maxEntrySize:562036736
+13 silly idealTree buildDeps
+14 silly fetch manifest @types/benchmark@^2.1.5
+15 silly packumentCache full:https://registry.npmjs.org/@types%2fbenchmark cache-miss
+16 http fetch GET https://registry.npmjs.org/@types%2fbenchmark attempt 1 failed with EACCES
+17 http fetch GET https://registry.npmjs.org/@types%2fbenchmark attempt 2 failed with EACCES
+18 http fetch GET https://registry.npmjs.org/@types%2fbenchmark attempt 3 failed with EACCES
+19 silly fetch manifest @types/node@^22.10.0
+20 silly packumentCache full:https://registry.npmjs.org/@types%2fnode cache-miss
+21 http fetch GET https://registry.npmjs.org/@types%2fnode attempt 1 failed with EACCES
+22 http fetch GET https://registry.npmjs.org/@types%2fnode attempt 2 failed with EACCES
+23 http fetch GET https://registry.npmjs.org/@types%2fnode attempt 3 failed with EACCES
+24 silly fetch manifest benchmark@^2.1.4
+25 silly packumentCache full:https://registry.npmjs.org/benchmark cache-miss
+26 http fetch GET https://registry.npmjs.org/benchmark attempt 1 failed with EACCES
+27 http fetch GET https://registry.npmjs.org/benchmark attempt 2 failed with EACCES
+28 http fetch GET https://registry.npmjs.org/benchmark attempt 3 failed with EACCES
+29 silly fetch manifest tsx@^4.19.2
+30 silly packumentCache full:https://registry.npmjs.org/tsx cache-miss
+31 http fetch GET https://registry.npmjs.org/tsx attempt 1 failed with EACCES
+32 http fetch GET https://registry.npmjs.org/tsx attempt 2 failed with EACCES
+33 http fetch GET https://registry.npmjs.org/tsx attempt 3 failed with EACCES
+34 silly fetch manifest typescript@^5.7.2
+35 silly packumentCache full:https://registry.npmjs.org/typescript cache-miss
+36 http fetch GET https://registry.npmjs.org/typescript attempt 1 failed with EACCES
+37 http fetch GET https://registry.npmjs.org/typescript attempt 2 failed with EACCES
