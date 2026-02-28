@@ -22,6 +22,7 @@ pip-wheel-metadata/
 
 # Local validation scratch outputs
 results/.tmp*/
+results/tmp*/
 results/**/*.sqlite
 
 # TypeScript / Node
